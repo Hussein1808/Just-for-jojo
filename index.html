@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffd9e6" />
   <title>For Jojo 🌸</title>
-  <meta name="description" content="An animated bouquet, for Jojo." />
+  <meta name="description" content="A playful little flower garden, grown just for Jojo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
 </head>
 <body>
+  <div class="bg" aria-hidden="true"></div>
   <canvas id="petals"></canvas>
   <div class="stars" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
 
-  <main class="screen">
+  <!-- ============ 1 · HERO ============ -->
+  <header class="hero section" id="top">
+    <div class="glow" aria-hidden="true"></div>
     <p class="eyebrow">a bouquet, grown just for</p>
     <h1 class="title">Jojo</h1>
 
-    <!-- ============ ANIMATED BOUQUET (built by script.js) ============ -->
     <div class="bouquet" aria-label="An animated flower bouquet of roses, lilies and peonies">
       <svg viewBox="0 0 480 600" class="bouquet__svg" role="img">
-        <!-- paper wrap -->
         <g class="wrap-group">
           <path class="wrap wrap--back"  d="M240 400 L175 580 Q240 606 305 580 Z" />
           <path class="wrap wrap--left"  d="M240 400 L140 556 Q186 582 240 546 Z" />
@@ -31,16 +32,68 @@
           <path class="wrap wrap--front" d="M240 400 L192 580 Q240 596 288 580 Z" />
           <path class="tie" d="M200 428 Q240 410 280 428 L274 456 Q240 442 206 456 Z" />
         </g>
-
         <g class="stems" fill="none" stroke="#4f8557" stroke-width="4.5" stroke-linecap="round"></g>
         <g class="leaves" fill="#67a86f"></g>
         <g class="blossoms"></g>
       </svg>
     </div>
 
+    <a class="scroll-hint" href="#note">
+      <span>scroll, there's more 🌷</span>
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 4v14M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </header>
+
+  <!-- ============ 2 · NOTE ============ -->
+  <section class="section note-section" id="note">
+    <article class="card reveal">
+      <span class="sticker">💌</span>
+      <h2 class="script">Dear Jojo,</h2>
+      <p class="typed" data-typed>You are the reason the flowers show off. Here's a little garden that never wilts — poke it, tap it, make a mess of petals. It's yours.</p>
+      <p class="signoff">— because you always deserve flowers 🌸</p>
+    </article>
+  </section>
+
+  <!-- ============ 3 · DAISY GAME ============ -->
+  <section class="section game-section" id="game">
+    <div class="reveal">
+      <h2 class="script">loves you… loves you…</h2>
+      <p class="lede">the old petal game — but it's totally rigged 💕 tap the daisy</p>
+    </div>
+
+    <div class="daisy-game">
+      <button class="daisy-game__flower" id="pluck" aria-label="Pluck a petal">
+        <span class="dg-core"></span>
+        <span class="dg-petals">
+          <i style="--a:0deg"></i><i style="--a:36deg"></i><i style="--a:72deg"></i>
+          <i style="--a:108deg"></i><i style="--a:144deg"></i><i style="--a:180deg"></i>
+          <i style="--a:216deg"></i><i style="--a:252deg"></i><i style="--a:288deg"></i>
+          <i style="--a:324deg"></i>
+        </span>
+      </button>
+      <p class="verdict" id="verdict">loves you</p>
+    </div>
+  </section>
+
+  <!-- ============ 4 · FINALE ============ -->
+  <section class="section finale-section" id="finale">
+    <div class="reveal">
+      <h2 class="script">ready for all of them?</h2>
+      <p class="lede">press it. trust me.</p>
+    </div>
+    <button class="gift-btn" id="giftBtn">
+      <span>shower me with flowers</span>
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7-4.35-9.5-8.5C.8 9.6 2 6 5.2 6 7 6 8.3 7 9 8.2 9.7 7 11 6 12.8 6 16 6 17.2 9.6 15.5 12.5 13 16.65 12 21 12 21z" fill="currentColor"/></svg>
+    </button>
+    <p class="finale-msg" id="finaleMsg">🌸 all yours, always 🌸</p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="divider" aria-hidden="true">✿ ❀ ✿ ❀ ✿</div>
     <blockquote class="quote">“Because you always deserve flowers.”</blockquote>
-    <p class="hint" id="hint">tap a flower · click anywhere for petals</p>
-  </main>
+    <p class="footer__name">for Jojo, always 🌸</p>
+  </footer>
 
   <button class="mute" id="muteBtn" aria-label="Toggle ambient sound" title="ambient sound">🔈</button>
   <script src="script.js"></script>
