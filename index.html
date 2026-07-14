@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Jojo 🌸 — A Garden That Blooms For You</title>
+  <meta name="description" content="A little animated garden of flowers, grown just for Jojo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
+</head>
+<body>
+  <!-- Petals fall on this canvas across the whole page -->
+  <canvas id="petals"></canvas>
+
+  <!-- Soft twinkle layer -->
+  <div class="stars" aria-hidden="true"></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero__glow"></div>
+
+    <div class="garden" aria-hidden="true">
+      <!-- Animated flowers grow from the ground -->
+      <div class="flower flower--1"><span class="stem"></span><span class="leaf leaf--l"></span><span class="leaf leaf--r"></span>
+        <span class="bloom rose"><i></i><i></i><i></i><i></i><i></i><i></i><span class="core"></span></span>
+      </div>
+      <div class="flower flower--2"><span class="stem"></span><span class="leaf leaf--l"></span>
+        <span class="bloom tulip"><i></i><i></i><i></i><span class="core"></span></span>
+      </div>
+      <div class="flower flower--3"><span class="stem"></span><span class="leaf leaf--r"></span>
+        <span class="bloom daisy"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="core core--yellow"></span></span>
+      </div>
+      <div class="flower flower--4"><span class="stem"></span><span class="leaf leaf--l"></span><span class="leaf leaf--r"></span>
+        <span class="bloom rose rose--peach"><i></i><i></i><i></i><i></i><i></i><i></i><span class="core"></span></span>
+      </div>
+      <div class="flower flower--5"><span class="stem"></span><span class="leaf leaf--r"></span>
+        <span class="bloom tulip tulip--pink"><i></i><i></i><i></i><span class="core"></span></span>
+      </div>
+      <div class="ground"></div>
+    </div>
+
+    <div class="hero__text">
+      <p class="eyebrow">a little garden, grown just for</p>
+      <h1 class="title">Jojo</h1>
+      <p class="subtitle">every flower here decided to bloom the moment it heard your name</p>
+      <a class="scroll-hint" href="#bouquet">
+        <span>wander in</span>
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 4v14M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ BOUQUET ============ -->
+  <section class="section bouquet-section" id="bouquet">
+    <div class="reveal">
+      <h2 class="script">A bouquet, hand-tied</h2>
+      <p class="lede">Twelve stems, one for each thing I never quite finish saying out loud.</p>
+    </div>
+
+    <div class="bouquet" aria-hidden="true">
+      <svg viewBox="0 0 400 460" class="bouquet__svg" role="img">
+        <!-- wrap -->
+        <path class="wrap" d="M200 300 L120 440 Q200 470 280 440 Z" />
+        <path class="wrap wrap--back" d="M200 300 L150 445 Q200 460 250 445 Z" />
+        <!-- stems -->
+        <g class="stems" stroke="#4b7f52" stroke-width="4" fill="none" stroke-linecap="round">
+          <path d="M200 300 C190 240 160 180 150 120" />
+          <path d="M200 300 C205 240 230 180 250 120" />
+          <path d="M200 300 C198 250 195 200 200 150" />
+          <path d="M200 300 C185 250 150 220 130 175" />
+          <path d="M200 300 C215 250 255 220 275 175" />
+        </g>
+        <!-- blossoms (positioning group holds translate; inner .blossom only scales) -->
+        <g class="blossoms">
+          <g transform="translate(150 118)"><g class="blossom" style="--i:0"></g></g>
+          <g transform="translate(250 118)"><g class="blossom" style="--i:1"></g></g>
+          <g transform="translate(200 146)"><g class="blossom" style="--i:2"></g></g>
+          <g transform="translate(128 172)"><g class="blossom" style="--i:3"></g></g>
+          <g transform="translate(277 172)"><g class="blossom" style="--i:4"></g></g>
+          <g transform="translate(176 192)"><g class="blossom" style="--i:5"></g></g>
+          <g transform="translate(226 192)"><g class="blossom" style="--i:6"></g></g>
+        </g>
+      </svg>
+    </div>
+    <p class="tiny-note reveal">psst — tap a flower</p>
+  </section>
+
+  <!-- ============ LETTER ============ -->
+  <section class="section letter-section" id="letter">
+    <article class="letter reveal">
+      <h2 class="script">Dear Jojo,</h2>
+      <p class="typed" data-typed>Some people are weather and some people are climate. You are a whole season — the good one, the one everybody waits all year for.</p>
+      <p class="letter__body reveal-late">I don't have a garden big enough for how I mean this, so I planted a small one here where the flowers never wilt and it's always the golden hour. Water it with a click. Come back whenever the day gets grey.</p>
+      <p class="signoff">— always in your corner 🌷</p>
+    </article>
+  </section>
+
+  <!-- ============ PETALS OF REASONS ============ -->
+  <section class="section reasons-section" id="reasons">
+    <div class="reveal">
+      <h2 class="script">Pull the petals</h2>
+      <p class="lede">The old game — but every petal lands on <em>loves you</em>.</p>
+    </div>
+
+    <div class="daisy-game" aria-hidden="true">
+      <button class="daisy-game__flower" id="pluck" aria-label="Pluck a petal">
+        <span class="dg-core"></span>
+        <span class="dg-petals">
+          <i style="--a:0deg"></i><i style="--a:36deg"></i><i style="--a:72deg"></i>
+          <i style="--a:108deg"></i><i style="--a:144deg"></i><i style="--a:180deg"></i>
+          <i style="--a:216deg"></i><i style="--a:252deg"></i><i style="--a:288deg"></i>
+          <i style="--a:324deg"></i>
+        </span>
+      </button>
+      <p class="daisy-game__verdict" id="verdict">loves you</p>
+    </div>
+  </section>
+
+  <!-- ============ THE GIFT ============ -->
+  <section class="section gift-section" id="gift">
+    <div class="reveal">
+      <h2 class="script">For you, all of it</h2>
+      <p class="lede">Press the button and let the sky do the rest.</p>
+    </div>
+    <button class="gift-btn" id="giftBtn">
+      <span>Send me the flowers</span>
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7-4.35-9.5-8.5C.8 9.6 2 6 5.2 6 7 6 8.3 7 9 8.2 9.7 7 11 6 12.8 6 16 6 17.2 9.6 15.5 12.5 13 16.65 12 21 12 21z" fill="currentColor"/></svg>
+    </button>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="flower-divider" aria-hidden="true">✿ ❀ ✿ ❀ ✿</div>
+    <p>Grown with sunlight, patience, and a little bit of code.</p>
+    <p class="footer__name">for Jojo, always 🌸</p>
+    <button class="mute" id="muteBtn" aria-label="Toggle ambient sound" title="ambient sound">🔈</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
