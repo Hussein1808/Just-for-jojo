@@ -109,7 +109,13 @@
     gameCanvas.width = gW * d; gameCanvas.height = gH * d;
     gctx.setTransform(d, 0, 0, d, 0, 0);
   }
-  if (gameCanvas) { resizeGame(); addEventListener('resize', resizeGame); }
+  if (gameCanvas) {
+    resizeGame();
+    addEventListener('resize', resizeGame);
+    gameCanvas.addEventListener('touchstart', (e) => {
+      if (gameOn) e.preventDefault();
+    }, { passive: false });
+  }
 
   const GAME_DUR = 15;
   let gameOn = false, caught = 0, timeLeft = GAME_DUR, gAnimId, gLastT = 0, gSpawn = 0;
@@ -156,6 +162,7 @@
 
   if (gameStage) gameStage.addEventListener('pointerdown', (e) => {
     if (!gameOn) return;
+    if (e.cancelable) e.preventDefault(); // prevent double-tap zoom
     const r = gameStage.getBoundingClientRect();
     const px = e.clientX - r.left, py = e.clientY - r.top;
     for (let i = gPetals.length - 1; i >= 0; i--) {

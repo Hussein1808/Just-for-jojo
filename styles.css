@@ -20,7 +20,7 @@
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; touch-action: manipulation; }
 
 body {
   margin: 0;
@@ -29,6 +29,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background: var(--midnight);
+  touch-action: manipulation;
 }
 
 /* ---------- fixed night-sky backdrop ---------- */
